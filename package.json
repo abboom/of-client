@@ -31,22 +31,40 @@
     "@eslint/js": "^9.23.0",
     "@tsconfig/node22": "^22.0.1",
     "@types/electron-squirrel-startup": "^1.0.2",
+    "@types/express": "^5.0.1",
     "@types/node": "^22.14.0",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "@vitejs/plugin-vue-jsx": "^4.1.2",
     "@vitest/eslint-plugin": "^1.1.39",
     "@vue/eslint-config-typescript": "^14.5.0",
     "@vue/tsconfig": "^0.7.0",
+    "@vueuse/core": "^13.0.0",
+    "ant-design-vue": "^4.2.6",
+    "async-validator": "^4.2.5",
+    "axios": "^1.8.4",
     "electron": "^35.1.3",
+    "electron-log": "^5.3.3",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-vue": "^10.0.0",
+    "express": "^5.1.0",
     "globals": "^16.0.0",
+    "http-proxy-middleware": "^3.0.3",
+    "lodash": "^4.17.21",
+    "pinia": "^3.0.1",
     "prettier": "3.5.3",
+    "sass": "^1.86.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.29.0",
+    "unocss": "66.1.0-beta.8",
+    "unplugin-auto-import": "^19.1.2",
+    "unplugin-vue-components": "^28.4.1",
     "vite": "^5.4.16",
+    "vite-plugin-vue-devtools": "^7.7.2",
     "vitest": "^3.1.1",
     "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
     "word-wrap": "^1.2.5"
   },
   "dependencies": {
@@ -57,6 +75,9 @@
       "electron",
       "electron-winstaller",
       "esbuild"
-    ]
+    ],
+    "patchedDependencies": {
+      "@electron-forge/plugin-vite@7.8.0": "patches/@electron-forge__plugin-vite@7.8.0.patch"
+    }
   }
 }

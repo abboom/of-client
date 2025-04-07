@@ -1,0 +1,15 @@
+diff --git a/forge-vite-env.d.ts b/forge-vite-env.d.ts
+index 6fef99673e0815247cbddece15ef2c80681b4cdd..c560e209a0753d63dd947fa21937965be78fac6a 100644
+--- a/forge-vite-env.d.ts
++++ b/forge-vite-env.d.ts
+@@ -7,6 +7,10 @@ declare global {
+   // whether you're running in development or production).
+   const MAIN_WINDOW_VITE_DEV_SERVER_URL: string;
+   const MAIN_WINDOW_VITE_NAME: string;
++  const PORT: number;
++  const SERVER_URL: string;
++  const BASE_URL: string;
++  const MODE: string;
+ 
+   interface VitePluginRuntimeKeys {
+     VITE_DEV_SERVER_URL: `${string}_VITE_DEV_SERVER_URL`;

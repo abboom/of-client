@@ -1,0 +1,17 @@
+{
+  "globals": {
+    "BrowserWindow": true,
+    "cloneDeep": true,
+    "debounce": true,
+    "dialog": true,
+    "ipcMain": true,
+    "isEmpty": true,
+    "throttle": true,
+    "__SERVER_URL__": true,
+    "__dirname__": true,
+    "tempFolderPath": true,
+    "createFrameWindow": true,
+    "windowArgs": true,
+    "htmlUrl": true
+  }
+}
