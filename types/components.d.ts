@@ -9,5 +9,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Opc: typeof import('./../renderer_process/components/Opc.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
   }
 }

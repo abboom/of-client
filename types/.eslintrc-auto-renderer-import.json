@@ -321,6 +321,7 @@
     "defaultTokenMap": true,
     "isDark": true,
     "toggleDark": true,
-    "tokenMap": true
+    "tokenMap": true,
+    "createCommonEntry": true
   }
 }

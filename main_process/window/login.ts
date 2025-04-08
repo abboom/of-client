@@ -7,6 +7,7 @@ export function createLoginWindow() {
   win.loadURL(htmlUrl + '/login.html')
 
   win.once('ready-to-show', () => {
+    win.webContents.openDevTools()
     win?.show()
   })
 }
