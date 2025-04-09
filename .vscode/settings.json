@@ -1,7 +1,5 @@
 {
   "files.exclude": {
-    ".idea": true,
-    "patches": true,
     ".vite": true,
     "**/.git": true,
     "**/.svn": true,
@@ -9,6 +7,9 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
+    ".idea": true,
+    "patches": true,
+    "dist": true,
     "node_modules": true
   },
   "editor.codeActionsOnSave": {
