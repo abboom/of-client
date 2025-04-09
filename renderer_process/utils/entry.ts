@@ -1,6 +1,8 @@
 import type { DefineComponent } from 'vue'
 import { createApp, defineComponent } from 'vue'
 import { ConfigProvider } from 'ant-design-vue'
+import '@/assets/css/index.scss'
+import 'virtual:uno.css'
 
 export function createCommonEntry(root: DefineComponent<{}, {}, any>) {
   const layout = root.layout ? root.layout : 'default'
@@ -28,7 +30,7 @@ export function createCommonEntry(root: DefineComponent<{}, {}, any>) {
         return () =>
           h(
             ConfigProvider,
-            { token: themeTokenMap.value },
+            { token: themeTokenMap.value.value },
             {
               default: () =>
                 h(

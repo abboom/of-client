@@ -1,7 +1,8 @@
 import { app } from 'electron'
 import started from 'electron-squirrel-startup'
 import { startServer } from './server'
-import { createLoginWindow } from './window/login'
+import { createLoginWindow } from './windows/login'
+import './events/index'
 
 app.commandLine.appendSwitch('--ignore-certificate-errors-spki-list')
 app.commandLine.appendSwitch('--no-proxy-server')

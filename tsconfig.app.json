@@ -6,7 +6,8 @@
     "types/env.d.ts",
     "types/auto-renderer-imports.d.ts",
     "types/components.d.ts",
-    "types/vue.d.ts"
+    "types/vue.d.ts",
+    "types/electron.d.ts"
   ],
   "exclude": [
     "src/**/__tests__/*"

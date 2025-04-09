@@ -322,6 +322,19 @@
     "isDark": true,
     "toggleDark": true,
     "tokenMap": true,
-    "createCommonEntry": true
+    "createCommonEntry": true,
+    "$http": true,
+    "closeWindow": true,
+    "encrypt": true,
+    "getParamByRegex": true,
+    "minWindow": true,
+    "openDevTools": true,
+    "COOKIE_MAX_AGE": true,
+    "IMAGE_EXTENSIONS": true,
+    "IMAGE_FALLBACK": true,
+    "PUBLIC_ENCRYPT_KRY": true,
+    "UPLOAD_CHUNK_SIZE": true,
+    "useFormData": true,
+    "useValidator": true
   }
 }

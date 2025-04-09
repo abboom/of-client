@@ -2,8 +2,15 @@ import { theme } from 'ant-design-vue'
 
 const { defaultAlgorithm, defaultSeed, darkAlgorithm } = theme
 
-export const isDark = useDark()
+export const isDark = useDark({
+  selector: 'html',
+  attribute: 'class',
+  valueDark: 'dark',
+  valueLight: 'light',
+})
 export const toggleDark = useToggle(isDark)
+
+console.log(isDark.value)
 
 export const darkTokenMap = computed(() => {
   defaultSeed.colorPrimary = '#d44e7d'

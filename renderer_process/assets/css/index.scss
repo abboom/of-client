@@ -1,0 +1,43 @@
+@use "./font.scss";
+@use "./variable.scss";
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  overflow: hidden;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: PingFangSC, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+.ant-btn-icon-only {
+  @apply flex items-center justify-center;
+}
+
+.btn-icon-wrap {
+  @apply h-full w-full flex items-center justify-center bg-transparent;
+}
+
+.opt-icon {
+  @apply flex h-8 w-8 cursor-pointer items-center justify-center rounded-md text-base hover:bg-info text-secondary hover:text-regular no-drag;
+}
