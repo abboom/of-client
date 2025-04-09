@@ -6,4 +6,4 @@ export const __dirname__ = path.dirname(fileURLToPath(import.meta.url))
 
 export const tempFolderPath = path.resolve(app.getPath('temp'), app.getName())
 
-export const HTML_URL = SERVER_URL + '/html'
+export const HTML_URL = SERVER_URL + '/html/'

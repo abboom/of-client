@@ -14,6 +14,14 @@
     "windowArgs": true,
     "htmlUrl": true,
     "HTML_URL": true,
-    "buildWindowUrl": true
+    "buildWindowUrl": true,
+    "BOTH": true,
+    "HandleEventChannels": true,
+    "MTR": true,
+    "OnEventChannels": true,
+    "RTM": true,
+    "SendEventChannels": true,
+    "getUserId": true,
+    "setUserId": true
   }
 }

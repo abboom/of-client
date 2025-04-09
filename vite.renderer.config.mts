@@ -86,7 +86,9 @@ export default ({ mode }: ConfigEnv) => {
       vue(),
       vueJsx(),
       vueDevTools(),
-      UnoCSS(),
+      UnoCSS({
+        configFile: './uno.config.ts',
+      }),
       Components({
         resolvers: [
           AntDesignVueResolver({

@@ -1,0 +1,115 @@
+@tailwind base;
+
+@layer base {
+  :root {
+    --sidebar-width: 68px;
+    --navbar-height: 75px;
+  }
+}
+
+$primary: var(--text-primary);
+
+html {
+  &.light {
+    --bg-error: #fff2f0;
+    --bg-error-hover: #fff1f0;
+    --border-error: #ffccc7;
+    --border-error-hover: #ffa39e;
+    --text-error: #ff4d4f;
+    --text-errorhover: #ff7875;
+    --text-erroractive: #d9363e;
+    --bg-success: #f6ffed;
+    --bg-success-hover: #d9f7be;
+    --border-success: #b7eb8f;
+    --border-success-hover: #95de64;
+    --text-success: #52c41a;
+    --text-successhover: #73d13d;
+    --text-successactive: #389e0d;
+    --bg-info: #e6f4ff;
+    --bg-info-hover: #bae0ff;
+    --border-info: #91caff;
+    --border-info-hover: #69b1ff;
+    --text-info: #1677ff;
+    --text-infohover: #4096ff;
+    --text-infoactive: #0958d9;
+    --bg-warning: #fffbe6;
+    --bg-warning-hover: #fff1b8;
+    --border-warning: #ffe58f;
+    --border-warning-hover: #ffd666;
+    --text-warning: #faad14;
+    --text-warninghover: #ffc53d;
+    --text-warningactive: #d48806;
+    --bg-primary: #fff0f2;
+    --bg-primary-hover: #fff0f3;
+    --border-primary: #ffe0e8;
+    --border-primary-hover: #ffb8cb;
+    --text-primary: #ff6699;
+    --text-primaryhover: #ff8fb0;
+    --text-primaryactive: #d94c80;
+    --text-regular: rgba(0, 0, 0, 0.88);
+    --text-secondary: rgba(0, 0, 0, 0.65);
+    --text-tertiary: rgba(0, 0, 0, 0.45);
+    --text-quaternary: rgba(0, 0, 0, 0.25);
+    --bg-layout: #f5f5f5;
+    --bg-container: #ffffff;
+    --bg-elevated: #ffffff;
+    --bg-spotlight: rgba(0, 0, 0, 0.85);
+    --border-regular: #d9d9d9;
+    --border-secondary: #f0f0f0;
+    --drag: drag;
+    --no-drag: no-drag;
+    --bg-primary-active: #ff6699
+  }
+
+  &.dark {
+    --bg-error: #2c1618;
+    --bg-error-hover: #451d1f;
+    --border-error: #5b2526;
+    --border-error-hover: #7e2e2f;
+    --text-error: #dc4446;
+    --text-errorhover: #e86e6b;
+    --text-erroractive: #ad393a;
+    --bg-success: #162312;
+    --bg-success-hover: #1d3712;
+    --border-success: #274916;
+    --border-success-hover: #306317;
+    --text-success: #49aa19;
+    --text-successhover: #6abe39;
+    --text-successactive: #3c8618;
+    --bg-info: #111a2c;
+    --bg-info-hover: #112545;
+    --border-info: #15325b;
+    --border-info-hover: #15417e;
+    --text-info: #1668dc;
+    --text-infohover: #3c89e8;
+    --text-infoactive: #1554ad;
+    --bg-warning: #2b2111;
+    --bg-warning-hover: #443111;
+    --border-warning: #594214;
+    --border-warning-hover: #7c5914;
+    --text-warning: #d89614;
+    --text-warninghover: #e8b339;
+    --text-warningactive: #aa7714;
+    --bg-primary: #25161d;
+    --bg-primary-hover: #3a1d28;
+    --border-primary: #4e2534;
+    --border-primary-hover: #6a2e43;
+    --text-primary: #b7456d;
+    --text-primaryhover: #cc6d8b;
+    --text-primaryactive: #913a58;
+    --text-regular: rgba(255, 255, 255, 0.85);
+    --text-secondary: rgba(255, 255, 255, 0.65);
+    --text-tertiary: rgba(255, 255, 255, 0.45);
+    --text-quaternary: rgba(255, 255, 255, 0.25);
+    --bg-layout: #1e2022;
+    --bg-container: #141414;
+    --bg-elevated: #1f1f1f;
+    --bg-spotlight: #424242;
+    --border-regular: #424242;
+    --border-secondary: #303030;
+    --drag: drag;
+    --no-drag: no-drag;
+    --bg-primary-active: #b7456d
+  }
+}
+

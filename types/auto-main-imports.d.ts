@@ -6,8 +6,11 @@
 // biome-ignore lint: disable
 export {}
 declare global {
+  const BOTH: typeof import('../main_process/utils/ipc')['BOTH']
   const BrowserWindow: typeof import('electron')['BrowserWindow']
   const HTML_URL: typeof import('../main_process/utils/constants')['HTML_URL']
+  const MTR: typeof import('../main_process/utils/ipc')['MTR']
+  const RTM: typeof import('../main_process/utils/ipc')['RTM']
   const __SERVER_URL__: typeof import('../main_process/utils/constants')['__SERVER_URL__']
   const __dirname__: typeof import('../main_process/utils/constants')['__dirname__']
   const buildWindowUrl: typeof import('../main_process/utils/window')['buildWindowUrl']
@@ -15,10 +18,18 @@ declare global {
   const createFrameWindow: typeof import('../main_process/utils/window')['createFrameWindow']
   const debounce: typeof import('lodash')['debounce']
   const dialog: typeof import('electron')['dialog']
+  const getUserId: typeof import('../main_process/utils/user')['getUserId']
   const htmlUrl: typeof import('../main_process/utils/constants')['htmlUrl']
   const ipcMain: typeof import('electron')['ipcMain']
   const isEmpty: typeof import('lodash')['isEmpty']
+  const setUserId: typeof import('../main_process/utils/user')['setUserId']
   const tempFolderPath: typeof import('../main_process/utils/constants')['tempFolderPath']
   const throttle: typeof import('lodash')['throttle']
   const windowArgs: typeof import('../main_process/utils/window')['windowArgs']
+}
+// for type re-export
+declare global {
+  // @ts-ignore
+  export type { RTM, BOTH, MTR, OnEventChannels, HandleEventChannels, SendEventChannels } from '../main_process/utils/ipc'
+  import('../main_process/utils/ipc')
 }

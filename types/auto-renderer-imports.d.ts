@@ -6,11 +6,18 @@
 // biome-ignore lint: disable
 export {}
 declare global {
+  const $http: typeof import('../renderer_process/utils/http')['$http']
+  const COOKIE_MAX_AGE: typeof import('../renderer_process/composables/constant')['COOKIE_MAX_AGE']
   const EffectScope: typeof import('vue')['EffectScope']
+  const IMAGE_EXTENSIONS: typeof import('../renderer_process/composables/constant')['IMAGE_EXTENSIONS']
+  const IMAGE_FALLBACK: typeof import('../renderer_process/composables/constant')['IMAGE_FALLBACK']
+  const PUBLIC_ENCRYPT_KRY: typeof import('../renderer_process/composables/constant')['PUBLIC_ENCRYPT_KRY']
+  const UPLOAD_CHUNK_SIZE: typeof import('../renderer_process/composables/constant')['UPLOAD_CHUNK_SIZE']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
   const cloneDeep: typeof import('lodash')['cloneDeep']
+  const closeWindow: typeof import('../renderer_process/utils/window')['closeWindow']
   const computed: typeof import('vue')['computed']
   const computedAsync: typeof import('@vueuse/core')['computedAsync']
   const computedEager: typeof import('@vueuse/core')['computedEager']
@@ -41,10 +48,12 @@ declare global {
   const defineStore: typeof import('pinia')['defineStore']
   const eagerComputed: typeof import('@vueuse/core')['eagerComputed']
   const effectScope: typeof import('vue')['effectScope']
+  const encrypt: typeof import('../renderer_process/utils/rsaEncrypt')['encrypt']
   const extendRef: typeof import('@vueuse/core')['extendRef']
   const getActivePinia: typeof import('pinia')['getActivePinia']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
+  const getParamByRegex: typeof import('../renderer_process/utils/window')['getParamByRegex']
   const h: typeof import('vue')['h']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
   const inject: typeof import('vue')['inject']
@@ -63,6 +72,7 @@ declare global {
   const mapStores: typeof import('pinia')['mapStores']
   const mapWritableState: typeof import('pinia')['mapWritableState']
   const markRaw: typeof import('vue')['markRaw']
+  const minWindow: typeof import('../renderer_process/utils/window')['minWindow']
   const nextTick: typeof import('vue')['nextTick']
   const onActivated: typeof import('vue')['onActivated']
   const onBeforeMount: typeof import('vue')['onBeforeMount']
@@ -85,6 +95,7 @@ declare global {
   const onUnmounted: typeof import('vue')['onUnmounted']
   const onUpdated: typeof import('vue')['onUpdated']
   const onWatcherCleanup: typeof import('vue')['onWatcherCleanup']
+  const openDevTools: typeof import('../renderer_process/utils/window')['openDevTools']
   const pausableWatch: typeof import('@vueuse/core')['pausableWatch']
   const provide: typeof import('vue')['provide']
   const provideLocal: typeof import('@vueuse/core')['provideLocal']
@@ -196,6 +207,7 @@ declare global {
   const useFileSystemAccess: typeof import('@vueuse/core')['useFileSystemAccess']
   const useFocus: typeof import('@vueuse/core')['useFocus']
   const useFocusWithin: typeof import('@vueuse/core')['useFocusWithin']
+  const useFormData: typeof import('../renderer_process/composables/validator')['useFormData']
   const useFps: typeof import('@vueuse/core')['useFps']
   const useFullscreen: typeof import('@vueuse/core')['useFullscreen']
   const useGamepad: typeof import('@vueuse/core')['useGamepad']
@@ -289,6 +301,7 @@ declare global {
   const useUserMedia: typeof import('@vueuse/core')['useUserMedia']
   const useVModel: typeof import('@vueuse/core')['useVModel']
   const useVModels: typeof import('@vueuse/core')['useVModels']
+  const useValidator: typeof import('../renderer_process/composables/validator')['useValidator']
   const useVibrate: typeof import('@vueuse/core')['useVibrate']
   const useVirtualList: typeof import('@vueuse/core')['useVirtualList']
   const useWakeLock: typeof import('@vueuse/core')['useWakeLock']
@@ -328,11 +341,18 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
+    readonly $http: UnwrapRef<typeof import('../renderer_process/utils/http')['$http']>
+    readonly COOKIE_MAX_AGE: UnwrapRef<typeof import('../renderer_process/composables/constant')['COOKIE_MAX_AGE']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly IMAGE_EXTENSIONS: UnwrapRef<typeof import('../renderer_process/composables/constant')['IMAGE_EXTENSIONS']>
+    readonly IMAGE_FALLBACK: UnwrapRef<typeof import('../renderer_process/composables/constant')['IMAGE_FALLBACK']>
+    readonly PUBLIC_ENCRYPT_KRY: UnwrapRef<typeof import('../renderer_process/composables/constant')['PUBLIC_ENCRYPT_KRY']>
+    readonly UPLOAD_CHUNK_SIZE: UnwrapRef<typeof import('../renderer_process/composables/constant')['UPLOAD_CHUNK_SIZE']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly cloneDeep: UnwrapRef<typeof import('lodash')['cloneDeep']>
+    readonly closeWindow: UnwrapRef<typeof import('../renderer_process/utils/window')['closeWindow']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly computedAsync: UnwrapRef<typeof import('@vueuse/core')['computedAsync']>
     readonly computedEager: UnwrapRef<typeof import('@vueuse/core')['computedEager']>
@@ -363,10 +383,12 @@ declare module 'vue' {
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly encrypt: UnwrapRef<typeof import('../renderer_process/utils/rsaEncrypt')['encrypt']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly getParamByRegex: UnwrapRef<typeof import('../renderer_process/utils/window')['getParamByRegex']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
@@ -385,6 +407,7 @@ declare module 'vue' {
     readonly mapStores: UnwrapRef<typeof import('pinia')['mapStores']>
     readonly mapWritableState: UnwrapRef<typeof import('pinia')['mapWritableState']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
+    readonly minWindow: UnwrapRef<typeof import('../renderer_process/utils/window')['minWindow']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
@@ -407,6 +430,7 @@ declare module 'vue' {
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
     readonly onWatcherCleanup: UnwrapRef<typeof import('vue')['onWatcherCleanup']>
+    readonly openDevTools: UnwrapRef<typeof import('../renderer_process/utils/window')['openDevTools']>
     readonly pausableWatch: UnwrapRef<typeof import('@vueuse/core')['pausableWatch']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly provideLocal: UnwrapRef<typeof import('@vueuse/core')['provideLocal']>
@@ -518,6 +542,7 @@ declare module 'vue' {
     readonly useFileSystemAccess: UnwrapRef<typeof import('@vueuse/core')['useFileSystemAccess']>
     readonly useFocus: UnwrapRef<typeof import('@vueuse/core')['useFocus']>
     readonly useFocusWithin: UnwrapRef<typeof import('@vueuse/core')['useFocusWithin']>
+    readonly useFormData: UnwrapRef<typeof import('../renderer_process/composables/validator')['useFormData']>
     readonly useFps: UnwrapRef<typeof import('@vueuse/core')['useFps']>
     readonly useFullscreen: UnwrapRef<typeof import('@vueuse/core')['useFullscreen']>
     readonly useGamepad: UnwrapRef<typeof import('@vueuse/core')['useGamepad']>
@@ -611,6 +636,7 @@ declare module 'vue' {
     readonly useUserMedia: UnwrapRef<typeof import('@vueuse/core')['useUserMedia']>
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
     readonly useVModels: UnwrapRef<typeof import('@vueuse/core')['useVModels']>
+    readonly useValidator: UnwrapRef<typeof import('../renderer_process/composables/validator')['useValidator']>
     readonly useVibrate: UnwrapRef<typeof import('@vueuse/core')['useVibrate']>
     readonly useVirtualList: UnwrapRef<typeof import('@vueuse/core')['useVirtualList']>
     readonly useWakeLock: UnwrapRef<typeof import('@vueuse/core')['useWakeLock']>

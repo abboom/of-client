@@ -8,8 +8,22 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AAutoComplete: typeof import('ant-design-vue/es')['AutoComplete']
+    AButton: typeof import('ant-design-vue/es')['Button']
+    ACheckbox: typeof import('ant-design-vue/es')['Checkbox']
+    AForm: typeof import('ant-design-vue/es')['Form']
+    AFormItem: typeof import('ant-design-vue/es')['FormItem']
+    AInput: typeof import('ant-design-vue/es')['Input']
+    AInputPassword: typeof import('ant-design-vue/es')['InputPassword']
+    FadeTransition: typeof import('./../renderer_process/components/FadeTransition.vue')['default']
+    NavTabsWrap: typeof import('./../renderer_process/components/NavTabsWrap.vue')['default']
     Opc: typeof import('./../renderer_process/components/Opc.vue')['default']
+    PageToolBar: typeof import('./../renderer_process/components/PageToolBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Scrollbar: typeof import('./../renderer_process/components/scrollbar/index.vue')['default']
+    Skeleton: typeof import('./../renderer_process/components/skeleton/index.vue')['default']
+    TabsTabPane: typeof import('./../renderer_process/components/tabs/TabPane.vue')['default']
+    TabsTabs: typeof import('./../renderer_process/components/tabs/Tabs.vue')['default']
   }
 }
