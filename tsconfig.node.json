@@ -2,9 +2,9 @@
   "extends": "@tsconfig/node22/tsconfig.json",
   "include": [
     "main_process/**/*.ts",
-    "vite.main.config.ts",
-    "vite.preload.config.ts",
-    "vite.renderer.config.ts",
+    "vite.main.config.mts",
+    "vite.preload.config.mts",
+    "vite.renderer.config.mts",
     "forge.config.ts",
     "types/forge.env.d.ts",
     "types/auto-main-imports.d.ts"
