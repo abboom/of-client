@@ -7,8 +7,10 @@
 export {}
 declare global {
   const BrowserWindow: typeof import('electron')['BrowserWindow']
+  const HTML_URL: typeof import('../main_process/utils/constants')['HTML_URL']
   const __SERVER_URL__: typeof import('../main_process/utils/constants')['__SERVER_URL__']
   const __dirname__: typeof import('../main_process/utils/constants')['__dirname__']
+  const buildWindowUrl: typeof import('../main_process/utils/window')['buildWindowUrl']
   const cloneDeep: typeof import('lodash')['cloneDeep']
   const createFrameWindow: typeof import('../main_process/utils/window')['createFrameWindow']
   const debounce: typeof import('lodash')['debounce']

@@ -12,6 +12,8 @@
     "tempFolderPath": true,
     "createFrameWindow": true,
     "windowArgs": true,
-    "htmlUrl": true
+    "htmlUrl": true,
+    "HTML_URL": true,
+    "buildWindowUrl": true
   }
 }

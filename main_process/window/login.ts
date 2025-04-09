@@ -4,7 +4,7 @@ export function createLoginWindow() {
     height: 470,
   })
 
-  win.loadURL(SERVER_URL + '/login')
+  win.loadURL(buildWindowUrl('login'))
 
   win.once('ready-to-show', () => {
     win.webContents.openDevTools()

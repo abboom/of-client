@@ -70,6 +70,9 @@
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1"
   },
+  "engines": {
+    "node": "=20.2.0"
+  },
   "pnpm": {
     "onlyBuiltDependencies": [
       "electron",

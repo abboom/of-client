@@ -1,6 +1,6 @@
 {
   "files.exclude": {
-    ".vite": true,
+    // ".vite": true,
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,

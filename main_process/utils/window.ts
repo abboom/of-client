@@ -20,3 +20,7 @@ export function createFrameWindow(args: BaseWindowConstructorOptions = {}): Brow
     },
   })
 }
+
+export function buildWindowUrl(page: string) {
+  return HTML_URL + page +'.html'
+}
