@@ -16,6 +16,7 @@ if (started) {
 
 if (MODE === 'production') {
   startServer()
+  checkForUpdate()
 }
 
 app.whenReady().then(() => {
