@@ -26,6 +26,7 @@
     "Conf": true,
     "ConfKey": true,
     "getConf": true,
-    "setConf": true
+    "setConf": true,
+    "checkForUpdate": true
   }
 }

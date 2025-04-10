@@ -4,6 +4,10 @@
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
+  "repository": {
+    "url": "https://github.com/abboom/of-client.git",
+    "type": "git"
+  },
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",

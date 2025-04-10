@@ -14,6 +14,7 @@ declare global {
   const __SERVER_URL__: typeof import('../main_process/utils/constants')['__SERVER_URL__']
   const __dirname__: typeof import('../main_process/utils/constants')['__dirname__']
   const buildWindowUrl: typeof import('../main_process/utils/window')['buildWindowUrl']
+  const checkForUpdate: typeof import('../main_process/utils/auto-update')['checkForUpdate']
   const cloneDeep: typeof import('lodash')['cloneDeep']
   const createFrameWindow: typeof import('../main_process/utils/window')['createFrameWindow']
   const debounce: typeof import('lodash')['debounce']
