@@ -14,6 +14,22 @@ const config: ForgeConfig = {
     icon: '/main_process/images/favicon.ico'
   },
   rebuildConfig: {},
+  publishers:[
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        authToken: process.env.GH_TOKEN,
+        repository: {
+          owner: 'abboom',
+          name: 'of-client'
+        },
+        prerelease: true,
+        releaseNotes: {
+          commitRange: 'HEAD..HEAD^' // 对比前一次提交生成说明
+        }
+      }
+    }
+  ],
   makers: [new MakerSquirrel({
     name: 'onlyfuck'
   }), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
