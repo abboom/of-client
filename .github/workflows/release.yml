@@ -23,6 +23,13 @@ jobs:
       - run: npm install -g pnpm
       - run: pnpm install
 
+      - name: Install Dependencies
+        env:
+          PNPM_HOME: ~/.pnpm-store
+        run: |
+          pnpm config set store-dir $PNPM_HOME
+          pnpm install --frozen-lockfile
+
       - name: Build & Package
         run: npx electron-forge make --platform=${{ matrix.os }} --arch=${{ matrix.arch }}
         env:
