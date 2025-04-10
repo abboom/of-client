@@ -7,7 +7,6 @@ export function createLoginWindow() {
   win.loadURL(buildWindowUrl('login'))
 
   win.once('ready-to-show', () => {
-    win.webContents.openDevTools()
     win?.show()
   })
 }

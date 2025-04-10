@@ -7,7 +7,6 @@ export function createHomeWindow() {
   win.loadURL(buildWindowUrl('home'))
 
   win.once('ready-to-show', () => {
-    win.webContents.openDevTools()
     win?.show()
   })
 }
