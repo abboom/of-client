@@ -22,6 +22,10 @@
     "RTM": true,
     "SendEventChannels": true,
     "getUserId": true,
-    "setUserId": true
+    "setUserId": true,
+    "Conf": true,
+    "ConfKey": true,
+    "getConf": true,
+    "setConf": true
   }
 }

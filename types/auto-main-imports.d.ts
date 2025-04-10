@@ -18,10 +18,12 @@ declare global {
   const createFrameWindow: typeof import('../main_process/utils/window')['createFrameWindow']
   const debounce: typeof import('lodash')['debounce']
   const dialog: typeof import('electron')['dialog']
+  const getConf: typeof import('../main_process/utils/setting')['getConf']
   const getUserId: typeof import('../main_process/utils/user')['getUserId']
   const htmlUrl: typeof import('../main_process/utils/constants')['htmlUrl']
   const ipcMain: typeof import('electron')['ipcMain']
   const isEmpty: typeof import('lodash')['isEmpty']
+  const setConf: typeof import('../main_process/utils/setting')['setConf']
   const setUserId: typeof import('../main_process/utils/user')['setUserId']
   const tempFolderPath: typeof import('../main_process/utils/constants')['tempFolderPath']
   const throttle: typeof import('lodash')['throttle']
@@ -32,4 +34,7 @@ declare global {
   // @ts-ignore
   export type { RTM, BOTH, MTR, OnEventChannels, HandleEventChannels, SendEventChannels } from '../main_process/utils/ipc'
   import('../main_process/utils/ipc')
+  // @ts-ignore
+  export type { Conf, ConfKey } from '../main_process/utils/setting'
+  import('../main_process/utils/setting')
 }

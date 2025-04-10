@@ -19,4 +19,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
     return ipcRenderer.invoke(channel, ...args)
   },
   getPathForFile: (file: File) => webUtils.getPathForFile(file),
+
+  getConf: (key: any) => ipcRenderer.invoke('get-conf', key),
+  setConf: (key: any, value: any) => ipcRenderer.send('set-conf', key, value)
 })

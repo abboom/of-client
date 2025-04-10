@@ -1,3 +1,4 @@
+import type { ConfKey, Conf } from './../main_process/utils/setting';
 import {
   OnEventChannels,
   HandleEventChannels,
@@ -12,6 +13,8 @@ declare global {
       on<T = unknown>(chanel: SendEventChannels, func: (...args: T[]) => void): void
       once<T = unknown>(chanel: SendEventChannels, func: (...args: T[]) => void): void
       getPathForFile(file: File): string
+      getConf<T extends ConfKey>(key: T): Promise<Conf[T]>
+      setConf<T extends ConfKey>(key: T, value: Conf[T]): void
     }
 
     versions: {
