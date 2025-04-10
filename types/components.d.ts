@@ -17,7 +17,6 @@ declare module 'vue' {
     AInputPassword: typeof import('ant-design-vue/es')['InputPassword']
     FadeTransition: typeof import('./../renderer_process/components/FadeTransition.vue')['default']
     NavTabsWrap: typeof import('./../renderer_process/components/NavTabsWrap.vue')['default']
-    Opc: typeof import('./../renderer_process/components/Opc.vue')['default']
     PageToolBar: typeof import('./../renderer_process/components/PageToolBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
