@@ -7,32 +7,41 @@ import { VitePlugin } from '@electron-forge/plugin-vite'
 import { FusesPlugin } from '@electron-forge/plugin-fuses'
 import { FuseV1Options, FuseVersion } from '@electron/fuses'
 
+import * as path from 'path'
+
 const config: ForgeConfig = {
   outDir: './dist',
   packagerConfig: {
+    name: 'onlyfuck',
     asar: true,
-    icon: '/main_process/images/favicon.ico'
   },
   rebuildConfig: {},
-  publishers:[
+  publishers: [
     {
       name: '@electron-forge/publisher-github',
       config: {
-        authToken:  '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', // process.env.GH_TOKEN,
+        authToken: process.env.GH_TOKEN, // process.env.GH_TOKEN,
         repository: {
           owner: 'abboom',
-          name: 'of-client'
+          name: 'of-client',
         },
         prerelease: true,
         releaseNotes: {
-          commitRange: 'HEAD..HEAD^' // 对比前一次提交生成说明
-        }
-      }
-    }
+          commitRange: 'HEAD..HEAD^', // 对比前一次提交生成说明
+        },
+      },
+    },
   ],
-  makers: [new MakerSquirrel({
-    name: 'onlyfuck'
-  }), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
+  makers: [
+    new MakerSquirrel({
+      name: 'onlyfuck',
+      iconUrl: 'https://static.zxhy.site/only-fuck/favicon.ico',
+      setupIcon: path.resolve(process.cwd(), './assets/images/favicon.ico'),
+    }),
+    new MakerZIP({}, ['darwin']),
+    new MakerRpm({}),
+    new MakerDeb({}),
+  ],
   plugins: [
     new VitePlugin({
       // `build` can specify multiple entry builds, which can be Main process, Preload scripts, Worker process, etc.

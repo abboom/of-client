@@ -10,6 +10,8 @@ import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
 
+import { responseInterceptor } from 'http-proxy-middleware'
+
 // https://vitejs.dev/config
 export default ({ mode }: ConfigEnv) => {
   const { VITE_SERVER_PORT, VITE_BASE_URL } = loadEnv(mode, process.cwd())
@@ -57,6 +59,7 @@ export default ({ mode }: ConfigEnv) => {
         '/api': {
           target: VITE_BASE_URL,
           changeOrigin: true,
+          selfHandleResponse: true,
           rewrite: (path) => path.replace(/^\/api/, ''),
           configure: (proxy) => {
             proxy.on('proxyReq', function (proxyReq, req, res, options) {
@@ -65,18 +68,17 @@ export default ({ mode }: ConfigEnv) => {
               }
             })
 
-            proxy.on('proxyRes', function (proxyRes, req, res) {
-              if (req.url === '/auth/login') {
-                const body: Uint8Array<ArrayBufferLike>[] = []
-                proxyRes.on('data', function (chunk) {
-                  body.push(chunk)
-                })
-                proxyRes.on('end', function () {
-                  const result = JSON.parse(Buffer.concat(body).toString())
-                  token = result.token
-                })
-              }
-            })
+            proxy.on(
+              'proxyRes',
+              responseInterceptor(async (responseBuffer, proxyRes, req, res) => {
+                const response = responseBuffer.toString('utf8') // convert buffer to string
+                if (req.url == '/auth/login') {
+                  token = JSON.parse(response).token
+                }
+
+                return response
+              }),
+            )
           },
         },
       },

@@ -1,25 +1,22 @@
-import { createProxyMiddleware } from 'http-proxy-middleware'
+import { createProxyMiddleware, responseInterceptor } from 'http-proxy-middleware'
 
 let token: string
 
 export const apiProxy = createProxyMiddleware({
   target: BASE_URL,
   changeOrigin: true,
+  selfHandleResponse: true,
   pathRewrite: { '^/api': '' },
 
   on: {
-    proxyRes: (proxyRes, req, res) => {
+    proxyRes: responseInterceptor(async (responseBuffer, proxyRes, req, res) => {
+      const response = responseBuffer.toString('utf8') // convert buffer to string
       if (req.url == '/auth/login') {
-        const body: Uint8Array<ArrayBufferLike>[] = []
-        proxyRes.on('data', function (chunk) {
-          body.push(chunk)
-        })
-        proxyRes.on('end', function () {
-          const result = JSON.parse(Buffer.concat(body).toString())
-          token = result.token
-        })
+        token = JSON.parse(response).token
       }
-    },
+
+      return response
+    }),
 
     proxyReq: (proxyReq, req, res) => {
       if (!!token) {
