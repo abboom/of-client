@@ -41,7 +41,7 @@ function setProxyConf() {}
 
     <div class="w-full h-fit flex flex-col justify-between">
       <div class="mt-15 w-full flex items-center">
-        <span class="text-[20px] text-primary">ONLYFUCK STATION</span>
+        <span class="text-[20px] text-primary">ONLYFUCK STATION Y</span>
       </div>
     </div>
 
