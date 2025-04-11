@@ -14,6 +14,7 @@ const config: ForgeConfig = {
   packagerConfig: {
     name: 'onlyfuck',
     asar: true,
+    icon: path.resolve(process.cwd(), './build/icons/icon.ico'),
   },
   rebuildConfig: {},
   publishers: [
@@ -35,8 +36,7 @@ const config: ForgeConfig = {
   makers: [
     new MakerSquirrel({
       name: 'onlyfuck',
-      iconUrl: 'https://static.zxhy.site/only-fuck/favicon.ico',
-      setupIcon: path.resolve(process.cwd(), './assets/images/favicon.ico'),
+      setupIcon: path.resolve(process.cwd(), './build/icons/icon.ico'),
     }),
     new MakerZIP({}, ['darwin']),
     new MakerRpm({}),

@@ -12,6 +12,8 @@ defineOptions({
 })
 
 const loginType = ref('UsernamePassword')
+
+function setProxyConf() {}
 </script>
 
 <template>
@@ -23,6 +25,10 @@ const loginType = ref('UsernamePassword')
         <img src="/favico.png" class="w-6" alt="" />
       </div>
       <div class="flex items-center">
+        <div class="opt-icon mr-4" @click="setProxyConf">
+          <div class="i-ant-design:setting-twotone text-xl"></div>
+        </div>
+
         <div class="opt-icon mr-4" @click="minWindow">
           <div class="i-ant-design:minus-outlined text-xl"></div>
         </div>
