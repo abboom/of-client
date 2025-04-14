@@ -1,0 +1,24 @@
+{
+  "files.exclude": {
+    ".vite": true,
+    ".github": true,
+    ".output": true,
+    ".nuxt": true,
+    // "release": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    ".idea": true,
+    "patches": true,
+    "dist": true,
+    "node_modules": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
