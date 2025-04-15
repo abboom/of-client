@@ -91,6 +91,6 @@ typings/
 .output/
 
 # Electron-Forge
-release/
+.release/
 
 dist/

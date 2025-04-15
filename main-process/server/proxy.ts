@@ -3,6 +3,7 @@ import { createProxyMiddleware, responseInterceptor } from 'http-proxy-middlewar
 let token: string
 
 export const apiProxy = createProxyMiddleware({
+  pathFilter: '/api/**/*',
   target: BASE_URL,
   changeOrigin: true,
   selfHandleResponse: true,
@@ -10,7 +11,7 @@ export const apiProxy = createProxyMiddleware({
   pathRewrite: { '^/api': '' },
 
   on: {
-    proxyRes: responseInterceptor(async (responseBuffer, proxyRes, req, res) => {
+    proxyRes: responseInterceptor(async (responseBuffer, _proxyRes, req) => {
       const response = responseBuffer.toString('utf8') // convert buffer to string
       if (req.url == '/auth/login') {
         token = JSON.parse(response).token
@@ -19,7 +20,7 @@ export const apiProxy = createProxyMiddleware({
       return response
     }),
 
-    proxyReq: (proxyReq, req, res) => {
+    proxyReq: (proxyReq) => {
       if (!!token) {
         proxyReq.setHeader('Authorization', 'Bearer ' + token)
       }
@@ -28,10 +29,11 @@ export const apiProxy = createProxyMiddleware({
 })
 
 export const resourceProxy = createProxyMiddleware({
+  pathFilter: '/resource/**/*',
   target: BASE_URL,
   changeOrigin: true,
   on: {
-    proxyReq: (proxyReq, req, res) => {
+    proxyReq: (proxyReq, req) => {
       const url = req.url
 
       const resourceID = url?.substring(url.lastIndexOf('/') + 1, url.lastIndexOf('.')) || ''

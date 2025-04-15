@@ -1,5 +1,3 @@
-import { buildWindowUrl, createFrameWindow } from '../utils/window'
-
 export function createHomeWindow() {
   const win = createFrameWindow({
     width: 1080,

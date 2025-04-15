@@ -1,6 +1,6 @@
 {
   "files.exclude": {
-    ".vite": true,
+    // ".vite": true,
     ".github": true,
     ".output": true,
     ".nuxt": true,

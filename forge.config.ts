@@ -1,27 +1,27 @@
-import type { ForgeConfig } from "@electron-forge/shared-types";
-import MakerSquirrel from "@electron-forge/maker-squirrel";
-import MakerZIP from "@electron-forge/maker-zip";
-import MakerDeb from "@electron-forge/maker-deb";
-import MakerRpm from "@electron-forge/maker-rpm";
-import VitePlugin from "@electron-forge/plugin-vite";
-import FusesPlugin from "@electron-forge/plugin-fuses";
-import { FuseV1Options, FuseVersion } from "@electron/fuses";
+import type { ForgeConfig } from '@electron-forge/shared-types'
+import MakerSquirrel from '@electron-forge/maker-squirrel'
+import MakerZIP from '@electron-forge/maker-zip'
+import MakerDeb from '@electron-forge/maker-deb'
+import MakerRpm from '@electron-forge/maker-rpm'
+import VitePlugin from '@electron-forge/plugin-vite'
+import FusesPlugin from '@electron-forge/plugin-fuses'
+import { FuseV1Options, FuseVersion } from '@electron/fuses'
 
-import * as path from "path";
+import * as path from 'path'
 
 const config: ForgeConfig = {
-  outDir: "./release",
+  outDir: './.release',
   packagerConfig: {
     asar: true,
-    icon: path.resolve(process.cwd(), "./build/icons/icon.ico"),
+    icon: path.resolve(process.cwd(), './build/icons/icon.ico'),
   },
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({
-      name: "onlyfuck",
-      setupIcon: path.resolve(process.cwd(), "./build/icons/icon.ico"),
+      name: 'onlyfuck',
+      setupIcon: path.resolve(process.cwd(), './build/icons/icon.ico'),
     }),
-    new MakerZIP({}, ["darwin"]),
+    new MakerZIP({}, ['darwin']),
     new MakerRpm({}),
     new MakerDeb({}),
   ],
@@ -32,20 +32,20 @@ const config: ForgeConfig = {
       build: [
         {
           // `entry` is just an alias for `build.lib.entry` in the corresponding file of `config`.
-          entry: "main-process/main.ts",
-          config: "vite.main.config.ts",
-          target: "main",
+          entry: 'main-process/main.ts',
+          config: 'vite.main.config.ts',
+          target: 'main',
         },
         {
-          entry: "main-process/preload.ts",
-          config: "vite.preload.config.ts",
-          target: "preload",
+          entry: 'main-process/preload.ts',
+          config: 'vite.preload.config.ts',
+          target: 'preload',
         },
       ],
       renderer: [
         {
-          name: "main_window",
-          config: "vite.renderer.config.ts",
+          name: 'main_window',
+          config: 'vite.renderer.config.ts',
         },
       ],
     }),
@@ -61,6 +61,6 @@ const config: ForgeConfig = {
       [FuseV1Options.OnlyLoadAppFromAsar]: true,
     }),
   ],
-};
+}
 
-export default config;
+export default config

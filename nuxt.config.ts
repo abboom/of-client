@@ -8,6 +8,6 @@ export default defineNuxtConfig({
   modules: ['@nuxt/eslint'],
 
   devServer: {
-    port: process.env.OF_SERVER_PORT,
-  }
+    port: Number(process.env.OF_SERVER_PORT),
+  },
 })

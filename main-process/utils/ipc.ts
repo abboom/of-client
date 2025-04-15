@@ -20,7 +20,7 @@ export enum BOTH {
 
 export enum MTR {
   UPLOAD_TASKS = 'upload-tasks',
-  NEW_VERSION_DOWNLOAD_PROGRESS = 'new-version-download-progress'
+  NEW_VERSION_DOWNLOAD_PROGRESS = 'new-version-download-progress',
 }
 
 export type OnEventChannels = `${RTM}`

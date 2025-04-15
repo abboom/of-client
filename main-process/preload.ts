@@ -1,4 +1,5 @@
 import { contextBridge, ipcRenderer, type IpcRendererEvent, webUtils } from 'electron'
+import type { HandleEventChannels, OnEventChannels, SendEventChannels } from './utils/ipc'
 
 contextBridge.exposeInMainWorld('versions', {
   electron: () => process.versions.electron,
@@ -21,5 +22,5 @@ contextBridge.exposeInMainWorld('electronAPI', {
   getPathForFile: (file: File) => webUtils.getPathForFile(file),
 
   getConf: (key: any) => ipcRenderer.invoke('get-conf', key),
-  setConf: (key: any, value: any) => ipcRenderer.send('set-conf', key, value)
+  setConf: (key: any, value: any) => ipcRenderer.send('set-conf', key, value),
 })

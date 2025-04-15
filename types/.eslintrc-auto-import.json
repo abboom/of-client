@@ -1,0 +1,30 @@
+{
+  "globals": {
+    "BOTH": true,
+    "Conf": true,
+    "ConfKey": true,
+    "HTML_URL": true,
+    "HandleEventChannels": true,
+    "MTR": true,
+    "OnEventChannels": true,
+    "RTM": true,
+    "SendEventChannels": true,
+    "__dirname__": true,
+    "buildWindowUrl": true,
+    "checkForUpdate": true,
+    "createFrameWindow": true,
+    "createHomeWindow": true,
+    "createLoginWindow": true,
+    "getConf": true,
+    "getUserId": true,
+    "setConf": true,
+    "setUserId": true,
+    "tempFolderPath": true,
+    "windowArgs": true,
+    "BrowserWindow": true,
+    "ipcMain": true,
+    "IpcMainEvent": true,
+    "getLoginWindow": true,
+    "setTrayMenu": true
+  }
+}

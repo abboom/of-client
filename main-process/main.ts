@@ -1,9 +1,8 @@
 import { app } from 'electron'
 import started from 'electron-squirrel-startup'
 import { startServer } from './server'
-import { createLoginWindow } from './windows/login'
 import './events/index'
-import { checkForUpdate } from './utils/auto-update'
+
 
 app.commandLine.appendSwitch('--ignore-certificate-errors-spki-list')
 app.commandLine.appendSwitch('--no-proxy-server')
@@ -15,6 +14,14 @@ if (started) {
   app.quit()
 }
 
+// app.on('second-instance', (event, argv, workingDirectory) => {
+//   // 当用户尝试启动第二个实例时，激活现有窗口
+//   if (getLoginWindow()) {
+//     // if (getLoginWindow()?.isMinimized()) getLoginWindow()?.restore();
+//     getLoginWindow()?.focus();
+//   }
+// });
+
 if (MODE === 'production') {
   startServer()
   checkForUpdate()
@@ -22,4 +29,5 @@ if (MODE === 'production') {
 
 app.whenReady().then(() => {
   createLoginWindow()
+  setTrayMenu()
 })

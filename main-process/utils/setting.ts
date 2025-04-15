@@ -1,6 +1,6 @@
-import Store from 'electron-store';
+import Store from 'electron-store'
 
-Store.initRenderer();
+Store.initRenderer()
 
 export type Conf = {
   proxyAddress: string
@@ -10,7 +10,7 @@ export type Conf = {
 
 export type ConfKey = keyof Conf
 
-const store = new Store<Conf>({name: 'of-client'})
+const store = new Store<Conf>({ name: 'of-client' })
 
 export function getConf<T extends ConfKey>(key: T): Conf[T] {
   return store.get(key)

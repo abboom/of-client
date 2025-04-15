@@ -4,15 +4,18 @@
     "main-process",
     "types/forge.env.d.ts",
     "types/electron.env.d.ts",
+    "types/koa2-connect.d.ts",
+    "types/main-process-autoimport.d.ts",
     "vite.main.config.ts",
     "vite.preload.config.ts",
     "vite.renderer.config.ts",
     "forge.config.ts"
   ],
-  "noEmit": true,
-  "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-
-  "module": "ESNext",
-  "moduleResolution": "node",
-  "types": ["node"]
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "ESNext",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "types": ["node"]
+  }
 }

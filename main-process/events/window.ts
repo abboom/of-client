@@ -1,7 +1,4 @@
-import { createHomeWindow } from '../windows/home'
-import { setUserId } from '../utils/user'
-import { BrowserWindow, ipcMain } from 'electron'
-import { RTM } from '../utils/ipc'
+import {BrowserWindow, ipcMain} from 'electron'
 
 ipcMain.on(RTM.LOGIN, (_event, userId: string) => {
   setUserId(userId)
@@ -19,4 +16,4 @@ ipcMain.on(
     MODE !== 'production' && BrowserWindow.fromWebContents(_e.sender)?.webContents.openDevTools(),
 )
 
-ipcMain.on(RTM.UPDATE_VERSION_Later, (_e, version: string) => {})
+ipcMain.on(RTM.UPDATE_VERSION_Later, (_e, _version: string) => {})
