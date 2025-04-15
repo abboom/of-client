@@ -4,7 +4,6 @@
     ".github": true,
     ".output": true,
     ".nuxt": true,
-    // "release": true,
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,
