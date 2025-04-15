@@ -6,7 +6,7 @@ export function createLoginWindow() {
     height: 470,
   })
 
-  win.loadURL(buildWindowUrl(''))
+  win.loadURL(buildWindowUrl('login'))
 
   win.once('ready-to-show', () => {
     win?.show()
