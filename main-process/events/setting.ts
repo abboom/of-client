@@ -1,4 +1,4 @@
-import {type IpcMainEvent, ipcMain} from 'electron'
+import { type IpcMainEvent, ipcMain } from 'electron'
 
 ipcMain.on('set-conf', <T extends ConfKey>(_event: IpcMainEvent, k: T, v: Conf[T]) => {
   setConf(k, v)

@@ -1,3 +1,4 @@
+import * as path from 'path'
 import type { ForgeConfig } from '@electron-forge/shared-types'
 import MakerSquirrel from '@electron-forge/maker-squirrel'
 import MakerZIP from '@electron-forge/maker-zip'
@@ -6,20 +7,24 @@ import MakerRpm from '@electron-forge/maker-rpm'
 import VitePlugin from '@electron-forge/plugin-vite'
 import FusesPlugin from '@electron-forge/plugin-fuses'
 import { FuseV1Options, FuseVersion } from '@electron/fuses'
+import { serialHooks } from '@electron/packager'
+import modifyPackage from './build/scripts/modify-package-json'
 
-import * as path from 'path'
+const appName = 'onlyfuck'
 
 const config: ForgeConfig = {
   outDir: './.release',
   packagerConfig: {
+    name: appName,
     asar: true,
     icon: path.resolve(process.cwd(), './build/icons/icon.ico'),
     extraResource: [path.resolve(process.cwd(), 'build/icons')],
+    afterCopy: [serialHooks([modifyPackage(appName)])],
   },
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({
-      name: 'onlyfuck',
+      name: appName,
       setupIcon: path.resolve(process.cwd(), './build/icons/icon.ico'),
     }),
     new MakerZIP({}, ['darwin']),

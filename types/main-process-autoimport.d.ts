@@ -7,9 +7,9 @@
 export {}
 declare global {
   const BOTH: typeof import('../main-process/utils/ipc')['BOTH']
-  const BrowserWindow: typeof import('electron')['BrowserWindow']
+  const BrowserWindow: (typeof import('electron'))['BrowserWindow']
   const HTML_URL: typeof import('../main-process/utils/constants')['HTML_URL']
-  const IpcMainEvent: typeof import('electron')['IpcMainEvent']
+  const IpcMainEvent: (typeof import('electron'))['IpcMainEvent']
   const MTR: typeof import('../main-process/utils/ipc')['MTR']
   const RTM: typeof import('../main-process/utils/ipc')['RTM']
   const __dirname__: typeof import('../main-process/utils/constants')['__dirname__']
@@ -21,7 +21,7 @@ declare global {
   const getConf: typeof import('../main-process/utils/setting')['getConf']
   const getLoginWindow: typeof import('../main-process/windows/login')['getLoginWindow']
   const getUserId: typeof import('../main-process/utils/user')['getUserId']
-  const ipcMain: typeof import('electron')['ipcMain']
+  const ipcMain: (typeof import('electron'))['ipcMain']
   const resourcePath: typeof import('../main-process/utils/constants')['resourcePath']
   const setConf: typeof import('../main-process/utils/setting')['setConf']
   const setTrayMenu: typeof import('../main-process/utils/menu')['setTrayMenu']

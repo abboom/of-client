@@ -1,5 +1,5 @@
-import { Menu, Tray, app, nativeImage } from 'electron'
 import path from 'node:path'
+import { Menu, Tray, app, nativeImage } from 'electron'
 
 export async function setTrayMenu() {
   let trayIcon
@@ -8,7 +8,8 @@ export async function setTrayMenu() {
     trayIcon = nativeImage.createFromPath(
       path.resolve(__dirname, '..', '..', 'build/icons/1024x1024.png'),
     )
-  } else {
+  }
+  else {
     trayIcon = nativeImage.createFromPath(path.resolve(resourcePath, 'icons/1024x1024.png'))
   }
 
@@ -16,12 +17,14 @@ export async function setTrayMenu() {
 
   // 定义菜单模板
   const contextMenu = Menu.buildFromTemplate([
-    { label: '显示主窗口', click: () => {} },
+    { label: '打开onlyfuck', click: () => {} },
     { type: 'separator' },
     { label: '退出', click: () => app.quit() },
   ])
 
+  tray.on('click', () => {})
+
   // 绑定菜单到托盘
   tray.setContextMenu(contextMenu)
-  tray.setToolTip('应用名称或提示信息') // 悬停提示[1,8,9](@ref)
+  tray.setToolTip('onlyfuck')
 }

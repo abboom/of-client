@@ -10,7 +10,8 @@
 $primary: var(--text-primary);
 
 html {
-  &.light {
+  &.light-mode {
+    --mode: light;
     --bg-error: #fff2f0;
     --bg-error-hover: #fff1f0;
     --border-error: #ffccc7;
@@ -58,10 +59,11 @@ html {
     --border-secondary: #f0f0f0;
     --drag: drag;
     --no-drag: no-drag;
-    --bg-primary-active: #ff6699
+    --bg-primary-active: #ff6699;
   }
 
-  &.dark {
+  &.dark-mode {
+    --mode: dark;
     --bg-error: #2c1618;
     --bg-error-hover: #451d1f;
     --border-error: #5b2526;
@@ -109,7 +111,6 @@ html {
     --border-secondary: #303030;
     --drag: drag;
     --no-drag: no-drag;
-    --bg-primary-active: #b7456d
+    --bg-primary-active: #b7456d;
   }
 }
-

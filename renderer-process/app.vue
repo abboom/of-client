@@ -1,9 +1,17 @@
 <script setup lang="ts">
-onMounted(() => {})
+onMounted(() => {
+  document.addEventListener('keydown', function (e) {
+    if (e.keyCode === 123 || e.key === 'F12') {
+      window.electronAPI.send('open-dev-tool')
+    }
+  })
+})
+
+const colorMode = useColorMode()
 </script>
 
 <template>
-  <AConfigProvider>
+  <AConfigProvider :theme="{ token: colorMode.value === 'dark' ? darkTokenMap : defaultTokenMap }">
     <AExtractStyle>
       <NuxtLayout>
         <NuxtPage />

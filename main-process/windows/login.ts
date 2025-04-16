@@ -1,12 +1,12 @@
-import type { BrowserWindow } from "electron"
+import type { BrowserWindow } from 'electron'
 
 let loginWindow: BrowserWindow | null = null
 
 export function createLoginWindow() {
-  const win = loginWindow = createFrameWindow({
+  const win = (loginWindow = createFrameWindow({
     width: 368,
     height: 470,
-  })
+  }))
 
   win.loadURL(buildWindowUrl('login'))
 

@@ -1,8 +1,9 @@
 {
   "files.exclude": {
-    // ".vite": true,
+    ".vite": true,
     ".github": true,
     ".output": true,
+    ".release": true,
     ".nuxt": true,
     "**/.git": true,
     "**/.svn": true,
