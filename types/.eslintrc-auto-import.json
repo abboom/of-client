@@ -25,6 +25,7 @@
     "ipcMain": true,
     "IpcMainEvent": true,
     "getLoginWindow": true,
-    "setTrayMenu": true
+    "setTrayMenu": true,
+    "resourcePath": true
   }
 }

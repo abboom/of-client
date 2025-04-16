@@ -14,6 +14,7 @@ const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
     icon: path.resolve(process.cwd(), './build/icons/icon.ico'),
+    extraResource: [path.resolve(process.cwd(), 'build/icons')],
   },
   rebuildConfig: {},
   makers: [

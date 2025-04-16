@@ -1,10 +1,18 @@
-import { Menu, Tray, app } from 'electron'
+import { Menu, Tray, app, nativeImage } from 'electron'
 import path from 'node:path'
 
 export async function setTrayMenu() {
+  let trayIcon
 
-  const iconPath = path.join(__dirname, 'assets/icon.png')
-  const tray = new Tray(iconPath)
+  if (MODE === 'development') {
+    trayIcon = nativeImage.createFromPath(
+      path.resolve(__dirname, '..', '..', 'build/icons/1024x1024.png'),
+    )
+  } else {
+    trayIcon = nativeImage.createFromPath(path.resolve(resourcePath, 'icons/1024x1024.png'))
+  }
+
+  const tray = new Tray(trayIcon)
 
   // 定义菜单模板
   const contextMenu = Menu.buildFromTemplate([

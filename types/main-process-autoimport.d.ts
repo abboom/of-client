@@ -22,6 +22,7 @@ declare global {
   const getLoginWindow: typeof import('../main-process/windows/login')['getLoginWindow']
   const getUserId: typeof import('../main-process/utils/user')['getUserId']
   const ipcMain: typeof import('electron')['ipcMain']
+  const resourcePath: typeof import('../main-process/utils/constants')['resourcePath']
   const setConf: typeof import('../main-process/utils/setting')['setConf']
   const setTrayMenu: typeof import('../main-process/utils/menu')['setTrayMenu']
   const setUserId: typeof import('../main-process/utils/user')['setUserId']

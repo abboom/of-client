@@ -12,8 +12,15 @@ const autoImportGlobals = JSON.parse(await readFile(autoImportFile, 'utf8'))
 export default (async function () {
   const nuxtConf = await withNuxt()
 
-  const conf = defineConfig([
-    globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**', '**/.vite/**', '**/out/**']),
+  return defineConfig([
+    globalIgnores([
+      '**/dist/**',
+      '**/dist-ssr/**',
+      '**/coverage/**',
+      '**/.vite/**',
+      '**/out/**',
+      '**/types/**',
+    ]),
 
     eslintConfigPrettier,
 
@@ -52,6 +59,4 @@ export default (async function () {
       files: ['**/*.{ts,mts,tsx,vue}'],
     },
   ])
-
-  return conf
 })()

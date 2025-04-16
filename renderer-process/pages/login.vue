@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>ccc</div>
+  <div class="text-red">ccc</div>
 </template>
 
 <style scoped></style>
