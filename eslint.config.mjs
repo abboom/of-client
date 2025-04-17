@@ -1,10 +1,9 @@
+import { readFile } from 'node:fs/promises'
 import { defineConfig, globalIgnores } from 'eslint/config'
 // @ts-check
-import withNuxt from './.nuxt/eslint.config.mjs'
 import eslintConfigPrettier from 'eslint-config-prettier/flat'
 import globals from 'globals'
-
-import { readFile } from 'node:fs/promises'
+import withNuxt from './.nuxt/eslint.config.mjs'
 
 const autoImportFile = new URL('./types/.eslintrc-auto-import.json', import.meta.url)
 const autoImportGlobals = JSON.parse(await readFile(autoImportFile, 'utf8'))

@@ -8,6 +8,10 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
   ],
 
+  imports: {
+    dirs: ['main-process/utils/ipc.ts'],
+  },
+
   devtools: { enabled: true },
 
   css: ['@/assets/css/transition.scss', '@/assets/css/index.scss'],
@@ -20,6 +24,7 @@ export default defineNuxtConfig({
     hid: 'nuxt-color-mode-script',
     globalName: '__NUXT_COLOR_MODE__',
   },
+
   srcDir: 'renderer-process/',
 
   ignore: ['types/-*.*'],
@@ -47,7 +52,7 @@ export default defineNuxtConfig({
     customCollections: [
       {
         prefix: 'cus',
-        dir: './renderer-process/assets/icon',
+        dir: './renderer-process/assets/icons',
         normalizeIconName: false,
       },
     ],
