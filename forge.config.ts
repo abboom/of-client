@@ -21,6 +21,21 @@ const config: ForgeConfig = {
     extraResource: [path.resolve(process.cwd(), 'build/icons')],
     afterCopy: [serialHooks([modifyPackage(appName)])],
   },
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        authToken: process.env.GITHUB_TOKEN,
+        generateReleaseNotes: true,
+        force: true,
+        repository: {
+          owner: 'abboom',
+          name: 'of-client',
+        },
+        prerelease: false,
+      },
+    },
+  ],
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({

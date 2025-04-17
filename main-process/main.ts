@@ -21,12 +21,12 @@ if (started) {
 //   }
 // });
 
-if (MODE === 'production') {
-  startServer()
-  checkForUpdate()
-}
-
 app.whenReady().then(() => {
+  if (MODE === 'production') {
+    startServer()
+    checkForUpdate()
+  }
+
   createLoginWindow()
   setTrayMenu()
 })
