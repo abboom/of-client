@@ -107,6 +107,7 @@ onMounted(() => {
       <AAutoComplete
         id="accountFiled"
         v-model:value="account"
+        w-full
         :options="loggedUser"
         placeholder="请输入手机号/邮箱/账号"
         @select="selectAccount"

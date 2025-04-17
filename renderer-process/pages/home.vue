@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div />
+  <div text-red />
 </template>
 
 <style lang='scss'>

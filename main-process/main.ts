@@ -7,6 +7,8 @@ import './events/index'
 app.commandLine.appendSwitch('--ignore-certificate-errors-spki-list')
 app.commandLine.appendSwitch('--no-proxy-server')
 app.commandLine.appendSwitch('enable-experimental-web-platform-features')
+app.commandLine.appendSwitch('enable-accelerated-2d-canvas')
+app.commandLine.appendSwitch('enable-gpu-rasterization')
 
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true'
 
@@ -20,15 +22,12 @@ else {
 }
 
 const gotTheLock = app.requestSingleInstanceLock()
-let isScondInstance = false
 
 if (!gotTheLock) {
   app.quit()
 }
 else {
   app.on('second-instance', () => {
-    isScondInstance = true
-
     const loginWindow = getLoginWindow()
     if (loginWindow) {
       if (loginWindow.isMinimized()) loginWindow.restore()

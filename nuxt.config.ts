@@ -35,6 +35,13 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-11-01',
 
+  nitro: {
+    compressPublicAssets: {
+      gzip: false,
+      brotli: true,
+    },
+  },
+
   antd: {
     extractStyle: true,
   },

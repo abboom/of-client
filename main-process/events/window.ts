@@ -13,7 +13,6 @@ ipcMain.on(RTM.MINI_WINDOW, (_e) => BrowserWindow.fromWebContents(_e.sender)?.mi
 ipcMain.on(
   RTM.OPEN_DEV_TOOL,
   (_e) =>
-    MODE !== 'production' && BrowserWindow.fromWebContents(_e.sender)?.webContents.openDevTools(),
+    // MODE !== 'production' && BrowserWindow.fromWebContents(_e.sender)?.webContents.openDevTools(),
+    BrowserWindow.fromWebContents(_e.sender)?.webContents.openDevTools(),
 )
-
-ipcMain.on(RTM.UPDATE_VERSION_Later, (_e, _version: string) => {})
