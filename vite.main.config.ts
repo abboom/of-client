@@ -9,7 +9,7 @@ export default ({ mode }: ConfigEnv) => {
     plugins: [
       AutoImport({
         dirs: ['./main-process/utils', './main-process/windows'],
-        dts: 'types/main-process-autoimport.d.ts',
+        dts: 'types/m.main-process-autoimport.d.ts',
         imports: [],
         eslintrc: {
           enabled: true, // Default `false`

@@ -1,9 +1,10 @@
 import path from 'node:path'
 import Koa from 'koa'
 import staticX from 'koa-static'
+import Koa2Connect from 'koa2-connect'
+import log from 'electron-log'
 import { __dirname__ } from '../utils/constants'
 import { apiProxy, resourceProxy } from './proxy'
-import Koa2Connect from 'koa2-connect'
 
 export function startServer() {
   const app = new Koa()
@@ -13,5 +14,10 @@ export function startServer() {
   app.use(Koa2Connect(apiProxy))
   app.use(Koa2Connect(resourceProxy))
 
-  app.listen(Number(SERVER_PORT), () => console.log('app server started'))
+  try {
+    app.listen(Number(SERVER_PORT), () => console.log('app server started'))
+  }
+  catch (e: any) {
+    log.error(e.message)
+  }
 }

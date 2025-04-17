@@ -19,6 +19,7 @@ declare global {
   const createHomeWindow: typeof import('../main-process/windows/home')['createHomeWindow']
   const createLoginWindow: typeof import('../main-process/windows/login')['createLoginWindow']
   const getConf: typeof import('../main-process/utils/setting')['getConf']
+  const getHomeWindow: typeof import('../main-process/windows/home')['getHomeWindow']
   const getLoginWindow: typeof import('../main-process/windows/login')['getLoginWindow']
   const getUserId: typeof import('../main-process/utils/user')['getUserId']
   const ipcMain: (typeof import('electron'))['ipcMain']
