@@ -25,9 +25,19 @@ export default defineNuxtConfig({
     globalName: '__NUXT_COLOR_MODE__',
   },
 
+  runtimeConfig: {
+    public: {
+      apiBase: process.env.OF_BASE_URL,
+    },
+  },
+
   srcDir: 'renderer-process/',
 
   ignore: ['types/-*.*'],
+
+  // routeRules: {
+  //   '/': { prerender: true },
+  // },
 
   devServer: {
     port: Number(process.env.OF_SERVER_PORT),

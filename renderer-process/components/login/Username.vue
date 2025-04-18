@@ -8,8 +8,17 @@ type AccountCache = {
   token?: string
 }
 
-const account = ref('')
-const password = ref('')
+useHead({
+  script: [
+    {
+      src: '/script/jsencrypt.min.js',
+      async: true,
+    },
+  ],
+})
+
+const account = ref('ashen')
+const password = ref('123456')
 
 const loading = ref(false)
 
@@ -33,6 +42,14 @@ watch(
   },
 )
 
+function encryptPassword(pwd: string) {
+  // @ts-ignore
+  const encryptor = new JSEncrypt()
+  encryptor.setPublicKey(PUBLIC_ENCRYPT_KRY) // 设置公钥
+  // @ts-ignore
+  return encryptor.encrypt(pwd) // 对需要加密的数据进行加密
+}
+
 const loggedUser = computed(() => {
   return Object.entries(userAccountCache.value)
     .map(([_key, value]) => value)
@@ -50,6 +67,14 @@ async function login() {
   //   account: account.value,
   //   password: password.value,
   // })
+
+  const { token, userID } = await $fetch<{ token: string, userID: string }>('/api/auth/login', {
+    method: 'POST',
+    body: {
+      account: account.value,
+      password: encryptPassword(password.value),
+    },
+  })
 
   // if (res) {
   //   loading.value = true

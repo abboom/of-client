@@ -1,10 +1,17 @@
-import type { ConfKey, Conf } from './../main-process/utils/setting'
-import {
-  OnEventChannels,
-  HandleEventChannels,
-  SendEventChannels,
-  RTM,
-} from '../main-process/utils/ipc.ts'
+// `nuxt/kit` is a helper subpath import you can use when defining local modules
+// that means you do not need to add `@nuxt/kit` to your project's dependencies
+import { defineNuxtModule } from 'nuxt/kit'
+import type { HandleEventChannels, OnEventChannels, SendEventChannels } from '~~/main-process/utils/ipc'
+import type { Conf, ConfKey } from '~~/main-process/utils/setting'
+
+export default defineNuxtModule({
+  meta: {
+    name: 'electron',
+  },
+  setup() {
+
+  },
+})
 
 declare global {
   interface Window {
