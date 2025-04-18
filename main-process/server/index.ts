@@ -12,6 +12,7 @@ export function startServer() {
   app.use(staticX(path.resolve(__dirname__, '..', 'renderer', 'main_window'), {
     brotli: true,
     maxAge: 31536000,
+    immutable: true,
   }))
 
   app.use(Koa2Connect(apiProxy))

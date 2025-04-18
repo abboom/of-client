@@ -2,7 +2,9 @@
 </script>
 
 <template>
-  <div text-red />
+  <div text-red>
+    <!-- <AButton>ccc</AButton> -->
+  </div>
 </template>
 
 <style lang='scss'>

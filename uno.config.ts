@@ -9,7 +9,15 @@ import {
 } from 'unocss'
 
 export default defineConfig({
-  presets: [presetUno(), presetAttributify(), presetTypography(), presetWebFonts()],
+  presets: [presetUno(), presetAttributify(),
+    presetTypography(), presetWebFonts({
+      fonts: {
+        sans: {
+          name: 'MyLocalFont',
+          provider: 'none',
+        },
+      },
+    })],
   transformers: [transformerDirectives(), transformerVariantGroup()],
   rules: [
     ['bg-error', { 'background-color': 'var(--bg-error)' }],

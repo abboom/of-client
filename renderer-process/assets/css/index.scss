@@ -1,5 +1,5 @@
-@use './font.scss';
-@use './variable.scss';
+@use "./font.scss";
+@use "./variable.scss";
 
 :root {
   color-scheme: var(--mode);
@@ -34,12 +34,12 @@ html {
   height: 100%;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-  font-family: PingFangSC, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-}
+// *,
+// *:before,
+// *:after {
+//   box-sizing: inherit;
+//   font-family: PingFangSC, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+// }
 
 .ant-btn-icon-only {
   @apply flex items-center justify-center;
